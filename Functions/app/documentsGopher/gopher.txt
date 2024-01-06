@@ -1,0 +1,4 @@
+go version
+extensiones recomendadas : go - errorlens
+Configurar linter:
+ - Instalar golangci-lint
