@@ -62,6 +62,7 @@ func SwitchFallthrough(letter string) {
 }
 
 func SwitchClassExample() {
+	//switch without condition
 	var age uint8 = 18
 	switch {
 	case age >= 150:
