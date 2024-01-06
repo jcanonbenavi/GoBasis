@@ -36,3 +36,13 @@ func IfShortVersionDiscountCalculator(amount float64) float64 {
 	}
 	return amount - (amount * 0.5)
 }
+
+func ClassExercise(salary float64) {
+	if salary <= 3000 {
+		fmt.Println("This person must pay taxes")
+	} else if salary <= 4000 {
+		fmt.Printf("They must pay %4.2f of their salary \n", salary*0.10)
+	} else {
+		fmt.Printf("They must pay %4.2f of their salary \n", salary*0.15)
+	}
+}

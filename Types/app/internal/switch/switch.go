@@ -25,6 +25,16 @@ func SwitchFunction(num int) {
 		fmt.Println("Invalid")
 	}
 }
+func SwitchFunctionMultipleCases(num int) {
+	switch {
+	case num > 0, num == 0:
+		fmt.Println("Is positive or 0")
+	case num < 0:
+		fmt.Println("Is negative")
+	default:
+		fmt.Println("Invalid")
+	}
+}
 
 func SwitchVariable() {
 	time := time.Now()

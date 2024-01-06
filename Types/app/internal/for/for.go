@@ -23,8 +23,8 @@ func ForLikeWhile() {
 func ForWithRange() {
 	//slice
 	fruits := []string{"apple", "banana", "pear"}
-	for i, fruit := range fruits {
-		fmt.Println(i, fruit)
+	for _, fruit := range fruits {
+		fmt.Println(fruit)
 	}
 	keysum := len(fruits)
 	fmt.Println("There are", keysum, "elements in the slice")
