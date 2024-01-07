@@ -45,3 +45,23 @@ func DivisionErrors(value1, value2 float64) (float64, error) {
 	}
 	return value1 / value2, nil
 }
+
+func ClosureFunction() func(firstName, lastName string) (fullname string) {
+	// separator
+	separator := "-"
+
+	return func(firstName, lastName string) (fullname string) {
+		// default values
+		defaultFirstName := "John"
+		defaultLastName := "Doe"
+		if firstName != "" {
+			defaultFirstName = firstName
+		}
+		if lastName != "" {
+			defaultLastName = lastName
+		}
+
+		fullname = defaultFirstName + separator + defaultLastName
+		return
+	}
+}

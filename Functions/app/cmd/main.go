@@ -16,4 +16,43 @@ func main() {
 		fmt.Println(err)
 	}
 	fmt.Println("Division result: ", result)
+	resultAverage, err := internal.Average(5.0, 4.5, 3.5, 3.0, 2.0)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("The average of the student's grades is: %f \n", resultAverage)
+
+	resultSalary, err := internal.Salary(800, internal.CategoryA)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Printf("The worker's salary is: %f \n", resultSalary)
+	minFunc, err := internal.Operation(internal.Minimum, 2, 3, 3, 4, 10, 2, 4)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("The minimum of the student's grades is:", minFunc)
+	averageFunc, err := internal.Operation(internal.AverageTwo, 2, 3, 3, 4, 1, 2, 4, 5)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("The average of the student's grades is:", averageFunc)
+	maxFunc, err := internal.Operation(internal.Maximum, 2, 3, 3, 4, 1, 2, 4, 5)
+	if err != nil {
+		fmt.Println(err)
+	}
+	fmt.Println("The maximum of the student's grades is:", maxFunc)
+
+	animalDog, err := internal.AnimalsOrchestrator(internal.Dog)
+	if err != nil {
+		fmt.Println(err)
+	}
+	resultAnimals, err := animalDog(2)
+
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Printf("The amount of necessary food is: %d\n", resultAnimals)
+
 }
