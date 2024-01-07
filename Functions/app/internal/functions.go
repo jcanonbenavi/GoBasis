@@ -39,11 +39,13 @@ func MyFunctionWithElipsis(values ...float64) float64 {
 	return total
 }
 
-func DivisionErrors(value1, value2 float64) (float64, error) {
+func DivisionErrors(value1, value2 float64) (calcute float64, err error) {
 	if value2 == 0 {
-		return 0, errors.New("Can not divide by zero")
+		err = errors.New("Can not divide by zero")
+		return
 	}
-	return value1 / value2, nil
+	calcute = value1 / value2
+	return
 }
 
 func ClosureFunction() func(firstName, lastName string) (fullname string) {

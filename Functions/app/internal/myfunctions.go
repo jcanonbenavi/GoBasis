@@ -14,11 +14,12 @@ func Load(salary float64) float64 {
 	}
 }
 
-func Average(notes ...float64) (float64, error) {
+func Average(notes ...float64) (calcute float64, err error) {
 	var total float64
 	for _, note := range notes {
 		if note < 0 {
-			return note, fmt.Errorf("Not negative numbers, please")
+			err = fmt.Errorf("Not negative numbers, please")
+			return
 		}
 		total = total + note/float64(len(notes))
 	}

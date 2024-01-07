@@ -18,7 +18,8 @@ func AnimalsOrchestrator(operator Animal) (a Animals, err error) {
 	case Cat:
 		a = catFunc
 	default:
-		return nil, fmt.Errorf("No such type of animal was found in the list")
+		err = fmt.Errorf("No such type of animal was found in the list")
+		return
 	}
 	return
 }
