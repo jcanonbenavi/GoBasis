@@ -2,7 +2,34 @@ package internal
 
 import (
 	"errors"
+	"fmt"
 )
+
+const (
+	CategoryC = "C"
+	CategoryB = "B"
+	CategoryA = "A"
+)
+
+func Salary(minutes int, category string) (salary float64, err error) {
+	hours := float64(minutes / 60)
+	switch category {
+	case CategoryA:
+		salary = hours * 3.000
+		salary = salary + (salary * 0.50)
+		return
+	case CategoryB:
+		salary = hours * 1.500
+		salary = salary + (salary * 0.20)
+		return
+	case CategoryC:
+		salary = hours * 1.000
+		return
+	default:
+		err = fmt.Errorf("Invalid category")
+		return
+	}
+}
 
 func Load(salary float64) (total float64) {
 	if salary > 5.000 && salary < 15.000 {

@@ -21,3 +21,11 @@ func SlicesExampleFor() {
 
 	}
 }
+
+func MapAny() {
+	var students = map[int]any{}
+	students[1] = "Benjamin"
+	students[2] = 26
+	students[3] = true
+	fmt.Println(students)
+}

@@ -1,6 +1,8 @@
 package main
 
-import internal "github.com/jcanonbenavi/app/internal/myexercises"
+import (
+	internal "github.com/jcanonbenavi/app/internal/maps"
+)
 
 //internal "github.com/jcanonbenavi/app/internal/array"
 //internal "github.com/jcanonbenavi/app/internal/for"
@@ -66,9 +68,11 @@ func main() {
 	// delete(MyMap, 2)
 	// fmt.Println(MyMap)
 	// internal.SlicesExampleFor()
+	internal.MapAny()
 
-	internal.ExerciseOne()
-	internal.ExerciseTwo()
-	internal.ExerciseThree()
-	internal.ExerciseFour()
+	// internal.ExerciseOne()
+	// internal.ExerciseTwo()
+	// internal.ExerciseThree()
+	// internal.ExerciseFour()
+
 }

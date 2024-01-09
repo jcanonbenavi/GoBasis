@@ -46,3 +46,35 @@ func TestAverage(t *testing.T) {
 		require.Equal(t, err, expectedError)
 	})
 }
+
+func TestSalary(t *testing.T) {
+	t.Run("success - 01: 120 minutes, category A", func(t *testing.T) {
+		result, err := internal.Salary(120, internal.CategoryA)
+		expectedResult := 9.000
+		require.Equal(t, result, expectedResult)
+		require.Nil(t, err)
+	})
+
+	t.Run("success - 01: 120 minutes, category B", func(t *testing.T) {
+		result, err := internal.Salary(120, internal.CategoryB)
+		expectedResult := 3.600
+		require.Equal(t, result, expectedResult)
+		require.Nil(t, err)
+	})
+
+	t.Run("success - 01: 120 minutes, category C", func(t *testing.T) {
+		result, err := internal.Salary(120, internal.CategoryC)
+		expectedResult := 2.000
+		require.Equal(t, result, expectedResult)
+		require.Nil(t, err)
+	})
+
+	t.Run("failure - 01: 120 minutes, category D", func(t *testing.T) {
+		result, err := internal.Salary(120, "D")
+		expectedResult := 0.0
+		expectedError := "Invalid category"
+		require.Equal(t, result, expectedResult)
+		require.Equal(t, err, expectedError)
+	})
+
+}
