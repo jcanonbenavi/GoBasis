@@ -4,13 +4,16 @@ import (
 	"fmt"
 )
 
-func Load(salary float64) float64 {
-	if salary > 5000 {
-		return salary * 0.17
-	} else if salary > 15000 {
-		return salary * 0.27
+func Load(salary float64) (total float64) {
+	if salary > 5.000 && salary < 15.000 {
+		total = salary * 0.17
+		return
+	} else if salary > 15.000 {
+		total = salary * 0.27
+		return
 	} else {
-		return 0
+		total = 0
+		return
 	}
 }
 

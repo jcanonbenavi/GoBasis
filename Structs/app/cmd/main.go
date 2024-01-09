@@ -1,0 +1,141 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+
+	"github.com/jcanonbenavi/app/internal"
+)
+
+func main() {
+	result := internal.Author{
+		Name:      "Jorge",
+		Language:  "Go",
+		Marticles: 10,
+		Pay:       100,
+		Salary: func(Ma int, Pay int) int {
+			return Ma * Pay
+		},
+	}
+	ShowTime := internal.Nameoperation{
+		Name: "ShowTime",
+		Do: func() {
+			println("ShowTime")
+		},
+	}
+	ShowTime.Do()
+	ShowDate := internal.Nameoperation{
+		Name: "ShowDate",
+		Do: func() {
+			print("ShowDate\n")
+		},
+	}
+	ShowDate.Do()
+	fmt.Println(result)
+
+	//var p internal.Person
+	//fmt.Printf("%#v\n", p) //0 values
+
+	/*________________________*/
+	person_one := internal.Person{
+		Name:       "Juan",
+		Gender:     "Men",
+		Age:        32,
+		Profession: "IT",
+		Likes: internal.Preferences{
+			Foods:  "Chicken",
+			Movies: "Harry Potter",
+			Series: "Doctor House",
+			Animes: "Dragon Ball",
+			Sports: "Futbol",
+		},
+		Address: internal.Address{
+			Street:       "Monte Calvario",
+			Neighborhood: "Universidades",
+			City:         "Querétaro",
+		},
+	}
+
+	person_two := internal.Person{
+		Name:       "Alexandra",
+		Gender:     "Women",
+		Age:        29,
+		Profession: "Software developer",
+		Likes: internal.Preferences{
+			Foods:  "Pizza",
+			Movies: "Harry Potter",
+			Series: "Doctor House",
+			Animes: "Digimon",
+			Sports: "Futbol",
+		},
+		Address: internal.Address{
+			Street:       "Monte Calvario",
+			Neighborhood: "Universidades",
+			City:         "Querétaro",
+		},
+	}
+
+	fmt.Println(person_one)
+	fmt.Println(person_two)
+
+	//fmt.Println(person_one.Age) print the age of the person one
+
+	/* Updating values
+	person_two.Likes.Movies = "N/A"
+	fmt.Println(person_two)
+	person_two.Likes = internal.Preferences{"Pizza", "N/A", "N/A", "N/A", "N/A"}
+	fmt.Println(person_two) */
+
+	myPerson := internal.PersonJsonStruct{
+		FirstName: "Maya",
+		LastName:  "Canon",
+		Address:   "",         //not value
+		Password:  "password", //hide
+	}
+	personAsJson, err := json.Marshal(myPerson)
+	fmt.Println(string(personAsJson))
+	fmt.Println(err) //nill
+	//myPerson.FullName()
+
+	/* ____________Composition exercise____________	*/
+
+	circle := internal.Circle{
+		Radius: 5.0,
+	}
+	fmt.Println("Value of the area", circle.Area())
+	ptr := &circle.Radius
+	circle.SetRadius(ptr, 9.0)
+	//fmt.Println(*ptr)
+	//*ptr = 7.0
+	fmt.Println("New value of the radius", circle.Radius)
+	fmt.Println("Value of the area", circle.Area())
+
+	/*____________________*/
+
+	myCar := internal.Car{
+		Engine:        internal.Engine{Horsepower: 250, Type: "V4"},
+		Chasis:        internal.Chasis{Material: "Steel"},
+		Bodywork:      internal.Bodywork{Color: "Red"},
+		NumberOfDoors: 4,
+	}
+
+	myMotorcycle := internal.Motorcycle{
+		Engine:   internal.Engine{Horsepower: 150, Type: "V2"},
+		Chasis:   internal.Chasis{Material: "Aluminum"},
+		Bodywork: internal.Bodywork{Color: "Black"},
+	}
+
+	myCar.Start()
+	myCar.DisplayInfo()
+
+	myMotorcycle.Start()
+	myMotorcycle.DisplayInfo()
+
+	/*fmt.Println(internal.NewHuman(
+		"", 0,
+	))
+
+	fmt.Println(internal.NewHuman(
+		"Alexa", 29,
+	)) */
+}
