@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	internal "github.com/jcanonbenavi/app/internal/Exercises"
 )
 
@@ -138,30 +136,40 @@ func main() {
 	// 	"Alexa", 29,
 	// )) */
 
-	ProductOne := internal.Product{
-		ID:          1,
-		Name:        "Product One",
-		Price:       100.0,
-		Description: "Product One Description",
-		Category:    "Category One",
-	}
-	ProductTwo := internal.Product{
-		ID:          2,
-		Name:        "Product Two",
-		Price:       200.0,
-		Description: "Product Two Description",
-		Category:    "Category Two",
-	}
-	productArray := internal.ProductsSlice{}
+	// ProductOne := internal.Product{
+	// 	ID:          1,
+	// 	Name:        "Product One",
+	// 	Price:       100.0,
+	// 	Description: "Product One Description",
+	// 	Category:    "Category One",
+	// }
+	// ProductTwo := internal.Product{
+	// 	ID:          2,
+	// 	Name:        "Product Two",
+	// 	Price:       200.0,
+	// 	Description: "Product Two Description",
+	// 	Category:    "Category Two",
+	// }
+	// productArray := internal.ProductsSlice{}
 
-	ProductOne.Save(&productArray)
-	ProductTwo.Save(&productArray)
-	internal.GetAll(productArray)
-	id, err := internal.GetById(6, productArray)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	fmt.Println(id)
+	// ProductOne.Save(&productArray)
+	// ProductTwo.Save(&productArray)
+	// internal.GetAll(productArray)
+	// id, err := internal.GetById(6, productArray)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// fmt.Println(id)
 
+	employee := internal.Employee{
+		ID:       1,
+		Position: "Position One",
+		Person: internal.Person{
+			ID:          1,
+			Name:        "Person One",
+			DateOfBirth: "01/01/2000",
+		},
+	}
+	employee.PrintEmployee()
 }
