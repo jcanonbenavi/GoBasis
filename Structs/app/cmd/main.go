@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+
 	internal "github.com/jcanonbenavi/app/internal/Exercises"
 )
 
@@ -151,8 +153,15 @@ func main() {
 		Category:    "Category Two",
 	}
 	productArray := internal.ProductsSlice{}
+
 	ProductOne.Save(&productArray)
 	ProductTwo.Save(&productArray)
-	internal.GetAll(&productArray)
+	internal.GetAll(productArray)
+	id, err := internal.GetById(6, productArray)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	fmt.Println(id)
 
 }
