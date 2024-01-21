@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+
+	"github.com/jcanonbenavi/app/internal/exercises"
+)
 
 func main() {
 	// 	book := internal.Book{
@@ -93,13 +97,16 @@ func main() {
 
 	/*---------------------------------Type Assertion-----------------------------------*/
 
-	var i interface{} = "hello"
-	s := i.(string)
-	fmt.Println(s)
+	// var i interface{} = "hello"
+	// s := i.(string)
+	// fmt.Println(s)
 
-	s, ok := i.(string)
-	fmt.Println(s, ok)
+	// s, ok := i.(string)
+	// fmt.Println(s, ok)
 
-	f, ok := i.(float64)
-	fmt.Println(f, ok)
+	// f, ok := i.(float64)
+	// fmt.Println(f, ok)
+
+	smallProduct := exercises.Factory("MediumProduct", 10.0)
+	fmt.Println(smallProduct.GetPrice())
 }
